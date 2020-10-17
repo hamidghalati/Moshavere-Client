@@ -4,9 +4,9 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PanelModule } from './Panel/Panel.module';
-import { LoginModule } from './Login/Login.module';
 import { RouterModule } from '@angular/router';
 import { adminRoutes } from './routes/routes.routing';
+import { AuthModule } from './auth/auth.module';
 
 @NgModule({
   declarations: [
@@ -17,7 +17,7 @@ import { adminRoutes } from './routes/routes.routing';
     BrowserModule,
     AppRoutingModule,
     PanelModule,
-    LoginModule,
+    AuthModule,
     RouterModule.forRoot(adminRoutes)
   ],
   providers: [],
