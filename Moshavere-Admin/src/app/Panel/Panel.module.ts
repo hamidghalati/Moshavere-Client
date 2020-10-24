@@ -6,10 +6,6 @@ import { AppRoutingModule } from '../app-routing.module';
 import { RouterModule } from '@angular/router';
 import { panelRoutes } from './routes/routes.routing';
 
-
-
-
-
 @NgModule({
   imports: [
     BrowserModule,
