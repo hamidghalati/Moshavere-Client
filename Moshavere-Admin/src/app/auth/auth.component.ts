@@ -1,7 +1,4 @@
-import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { from } from 'rxjs';
-
 
 @Component({
   selector: 'app-auth',

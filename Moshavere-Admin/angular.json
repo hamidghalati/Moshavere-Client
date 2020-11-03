@@ -23,28 +23,30 @@
               "src/assets"
             ],
             "styles": [
-              "src/assets/content/vendor/bootstrap/css/bootstrap.min.css",
-               "src/assets/content/vendor/font-awesome/css/font-awesome.min.css",
-              "src/assets/content/vendor/animate-css/vivify.min.css",
-              "src/assets/content/vendor/c3/c3.min.css",
-              "src/assets/content/vendor/chartist/css/chartist.css",
-              "src/assets/content/vendor/chartist-plugin-tooltip/chartist-plugin-tooltip.css",
-              "src/assets/content/vendor/toastr/toastr.min.css",
-              "src/assets/content/vendor/jvectormap/jquery-jvectormap-2.0.3.css",
-              "src/assets/css/site.min.css"
-
+              "src/assets/fonts/feather/style.min.css",
+              "src/assets/fonts/simple-line-icons/style.css",
+              "src/assets/fonts/font-awesome/css/font-awesome.min.css",
+              "src/assets/vendors/css/perfect-scrollbar.min.css",
+              "src/assets/vendors/css/prism.min.css",
+              "src/assets/vendors/css/chartist.min.css",
+              "src/assets/css/app.css",
+              "src/styles.css"
             ],
             "scripts": [
-              "src/assets/bundles/libscripts.bundle.js",
-              "src/assets/bundles/vendorscripts.bundle.js",
-              "src/assets/bundles/c3.bundle.js",
-              "src/assets/bundles/chartist.bundle.js",
-              "src/assets/bundles/knob.bundle.js",
-              "src/assets/content/vendor/toastr/toastr.js",
-              "src/assets/bundles/mainscripts.bundle.js",
-              "src/assets/js/index.js"
+              "src/assets/vendors/js/core/jquery-3.3.1.min.js",
+              "src/assets/vendors/js/core/popper.min.js",
+              "src/assets/vendors/js/core/bootstrap.min.js",
+              "src/assets/vendors/js/perfect-scrollbar.jquery.min.js",
+              "src/assets/vendors/js/prism.min.js",
+              "src/assets/vendors/js/jquery.matchHeight-min.js",
+              "src/assets/vendors/js/screenfull.min.js",
+              "src/assets/vendors/js/pace/pace.min.js",
+              "src/assets/vendors/js/chartist.min.js",
+              "src/assets/js/app-sidebar.js",
+              "src/assets/js/notification-sidebar.js",
+              "src/assets/js/customizer.js",
+              "src/assets/js/dashboard-ecommerce.js"
             ],
-
             "es5BrowserSupport": true
           },
           "configurations": {

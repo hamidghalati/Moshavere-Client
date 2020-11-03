@@ -5,8 +5,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from '../app-routing.module';
 import { RouterModule } from '@angular/router';
 import { authRoutes } from './routes/routes.routing';
-import { LoginComponent } from './component/login/login.component';
-import { RegisterComponent } from './component/register/register.component';
+import { LoginComponent } from './components/login/login.component';
+import { RegisterComponent } from './components/register/register.component';
 import { FormsModule } from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 
@@ -18,12 +18,7 @@ import {HttpClientModule} from '@angular/common/http';
     RouterModule.forRoot(authRoutes),
     FormsModule,
     HttpClientModule
-
   ],
-  declarations: [
-     AuthComponent,
-     LoginComponent,
-     RegisterComponent,
-    ]
+  declarations: [AuthComponent, LoginComponent, RegisterComponent]
 })
 export class AuthModule { }
