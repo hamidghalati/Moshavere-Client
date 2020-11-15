@@ -40390,6 +40390,7 @@ select.form-control {
 
 .custom-control {
   display : block;
+  float:right;
 }
 .custom-control.inline {
   display : inline;
