@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { from } from 'rxjs';
 import 'src/assets/js/dashboard-ecommerce.js';
 import Chartist from '../../assets/vendors/js/chartist.min.js';
@@ -11,7 +12,7 @@ import Chartist from '../../assets/vendors/js/chartist.min.js';
 })
 export class PanelComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private alertService: ToastrService) { }
 
   ngOnInit() {
     this.loadChart();
@@ -19,6 +20,7 @@ export class PanelComponent implements OnInit {
   logout() {
     localStorage.removeItem('token');
     this.router.navigate(['auth/login']);
+    this.alertService.info('شما با موفقیت از پنل کاربری خارج شدید', 'خروج');
   }
   loadChart() {
     // Widget Area Chart 1 Starts

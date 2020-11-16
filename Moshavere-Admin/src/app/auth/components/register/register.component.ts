@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ToastrService } from 'ngx-toastr';
 import { AuthService } from '../../services/auth.service';
 
 @Component({
@@ -8,16 +9,16 @@ import { AuthService } from '../../services/auth.service';
 })
 export class RegisterComponent implements OnInit {
 model: any = {};
-  constructor(private authService: AuthService) { }
+  constructor(private authService: AuthService, private alertService: ToastrService) { }
 
   ngOnInit() {
   }
 
   register() {
     this.authService.register(this.model).subscribe(() => {
-console.log('success');
+      this.alertService.success('اطلاعات کاربری شما با موفقیت ثبت گردید', 'ثبت اطلاعات');
     }, err => {
-      console.log(err);
+      this.alertService.warning(err, 'خطا');
   });
 }
 
