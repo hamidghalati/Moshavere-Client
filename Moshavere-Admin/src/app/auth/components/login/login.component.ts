@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { AuthService } from '../../services/auth.service';
 
@@ -10,18 +10,27 @@ import { AuthService } from '../../services/auth.service';
 })
 export class LoginComponent implements OnInit {
   model: any = {};
-  constructor(private authService: AuthService, private route: Router, private alertService: ToastrService) { }
+  returnUrl: any = '';
+  constructor(private authService: AuthService, private router: Router
+  , private alertService: ToastrService, private route: ActivatedRoute) { }
 
   ngOnInit() {
+    this.route.queryParams.subscribe(params => this.returnUrl = params [' return '] || 'panel/dashboard');
+    if(this.loggedIn()) {
+      this.router.navigate([this.returnUrl]);
+    }
   }
   login() {
     this.authService.login(this.model).subscribe(next => {
       this.alertService.success('با موفقیت وارد شدید', 'ورود');
-      this.route.navigate(['/panel']);
+      this.router.navigate([this.returnUrl]);
     }, err => {
       this.alertService.error(err, 'خطا');
     }
     );
+  }
+  loggedIn() {
+    return this.authService.loggedIn();
   }
 
 
