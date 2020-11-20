@@ -12,6 +12,13 @@ export class AuthGuard implements CanActivate {
 constructor(private authService: AuthService, private router: Router, private alertSystem: ToastrService) {
 }
   canActivate(): boolean {
-    return true;
+    if (this.authService.loggedIn()) {
+      return true;
+    } else {
+    this.alertSystem.error('برای ورود باید ابتدا ثبت نام کنید و وارد شوید', 'هشدار');
+    this.router.navigate(['auth/login']);
+    return false;
+    }
+
   }
 }

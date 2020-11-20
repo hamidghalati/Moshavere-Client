@@ -15,6 +15,7 @@ import {
   POSITION,
   PB_DIRECTION
 } from 'ngx-ui-loader';
+import { AuthGuard } from './guard/auth.guard';
 
 const ngxUiLoaderConfig: NgxUiLoaderConfig = {
   bgsColor: 'red',
@@ -61,7 +62,7 @@ const ngxUiLoaderConfig: NgxUiLoaderConfig = {
     // NgProgressHttpModule,
     // NgProgressRouterModule
   ],
-  providers: [ErrorInterceptorProvider],
+  providers: [ErrorInterceptorProvider, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

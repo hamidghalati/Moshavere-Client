@@ -3,12 +3,12 @@ import { Router } from '@angular/router';
 import { JwtHelperService } from '@auth0/angular-jwt';
 import { ToastrService } from 'ngx-toastr';
 import { from } from 'rxjs';
-import 'src/assets/js/dashboard-ecommerce.js';
+
 import Chartist from '../../assets/vendors/js/chartist.min.js';
 import { AuthService } from '../auth/services/auth.service.js';
 
 @Component({
-  selector: 'app-Panel',
+  selector: 'app-panel',
   templateUrl: './Panel.component.html',
   styleUrls: ['./Panel.component.css']
 })

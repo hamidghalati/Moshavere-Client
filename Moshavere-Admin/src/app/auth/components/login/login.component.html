@@ -13,13 +13,15 @@
                               <form #loginForm="ngForm" (ngSubmit)="login()">
                                   <div class="form-group">
                                       <div class="col-md-12">
-                                          <input [(ngModel)]="model.username" type="email" class="form-control form-control-small" name="username" id="username" placeholder="ایمیل" required email>
+                                          <input [(ngModel)]="model.username" type="email" class="form-control form-control-small" 
+                                          name="username" id="username" placeholder="ایمیل" required email [ngModelOptions]="{standalone: true}">
                                       </div>
                                   </div>
   
                                   <div class="form-group">
                                       <div class="col-md-12">
-                                          <input [(ngModel)]="model.password" type="password" class="form-control form-control-small" name="password" id="password" placeholder="رمز عبور" required>
+                                          <input [(ngModel)]="model.password" type="password" [ngModelOptions]="{standalone: true}"
+                                          class="form-control form-control-small" name="password1" id="password" placeholder="رمز عبور" required>
                                       </div>
                                   </div>
   
