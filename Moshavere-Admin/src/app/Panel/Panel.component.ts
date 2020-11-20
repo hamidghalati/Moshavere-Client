@@ -1,9 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { JwtHelperService } from '@auth0/angular-jwt';
 import { ToastrService } from 'ngx-toastr';
 import { from } from 'rxjs';
 import 'src/assets/js/dashboard-ecommerce.js';
 import Chartist from '../../assets/vendors/js/chartist.min.js';
+import { AuthService } from '../auth/services/auth.service.js';
 
 @Component({
   selector: 'app-Panel',
@@ -11,16 +13,28 @@ import Chartist from '../../assets/vendors/js/chartist.min.js';
   styleUrls: ['./Panel.component.css']
 })
 export class PanelComponent implements OnInit {
-
-  constructor(private router: Router, private alertService: ToastrService) { }
+jwtHelper = new JwtHelperService();
+  constructor(private router: Router, private alertService: ToastrService, public authService: AuthService) { }
 
   ngOnInit() {
     this.loadChart();
+    this.getDecodedToken();
   }
+
+  getDecodedToken() {
+    const token = localStorage.getItem('token');
+    if (token) {
+      this.authService.decodedToken = this.jwtHelper.decodeToken(token);
+    }
+  }
+
   logout() {
     localStorage.removeItem('token');
     this.router.navigate(['auth/login']);
     this.alertService.info('شما با موفقیت از پنل کاربری خارج شدید', 'خروج');
+  }
+  loggedIn() {
+    return this.authService.loggedIn();
   }
   loadChart() {
     // Widget Area Chart 1 Starts
